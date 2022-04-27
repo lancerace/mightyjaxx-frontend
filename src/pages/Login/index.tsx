@@ -38,7 +38,7 @@ async function login():Promise<any>{
                             }} />
                         </Grid>
                         <Grid item md={12} sm={12} xs={12}>
-                            <TextField fullWidth label="Password" variant="outlined" onChange={(e)=>{
+                            <TextField fullWidth label="Password" variant="outlined" type="password" onChange={(e)=>{
                                 setState({...state,password: e.target.value})
                             }} />
                         </Grid>
