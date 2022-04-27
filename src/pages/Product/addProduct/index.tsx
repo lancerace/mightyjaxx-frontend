@@ -71,8 +71,10 @@ export default function AddProduct() {
                                     const response = await addProduct(state.title, state.imageUrl).catch(err => {
                                         return alert(err.response.data.message);
                                     });
-                                    if (response?.status === 201)
+                                    if (response?.status === 201){
                                         alert("product created successfully");
+                                        window.location.href = `${window.location.origin}/`;
+                                    }
                                 }}>
                                 Add
                             </Button>
