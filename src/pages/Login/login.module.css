@@ -1,0 +1,8 @@
+.mainContainer>div:nth-child(1) {
+    height: 20vh;
+}
+
+.loginContainer,
+.loginContainer>div {
+    padding: 2vh;
+}
