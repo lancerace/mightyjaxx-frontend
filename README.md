@@ -7,6 +7,13 @@ project is hosted in firebase. **URL**: https://mightyjaxx-frontend.web.app/
 If api call is not working for the first time. please trigger it again, as i am using free version of heroku for backend. It is in sleep mode when not in use for certain period of time.
 
 
+## Pages with Protected Route
+- Product List page
+- add product page
+- edit product page
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
