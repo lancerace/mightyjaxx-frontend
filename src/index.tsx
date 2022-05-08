@@ -19,7 +19,6 @@ const root = ReactDOM.createRoot(
 
 
 const ProtectedRoute = () => {
-
 if(!localStorage.getItem('accessToken'))
     return <Navigate to="/login" replace />;
 

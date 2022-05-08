@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Grid } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
+import { TextField } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 //import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts, IProduct, selectAllProducts } from '../../reducers/product';
@@ -44,7 +43,10 @@ export default function Product() {
   const columns: GridColDef[] = [
     { field: 'sku', headerName: 'SKU', width: 240 },
     { field: 'title', headerName: 'Title', width: 220 },
-    { field: 'imageUrl', headerName: 'Images', width: 300 },
+    { field: 'fileUrl', headerName: 'Images', width: 200, renderCell:(cellValues)=>{
+      
+      return(<img src={cellValues.row.fileUrl} alt="" height="140vh"></img>)
+    } },
     {
       field: "edit", headerName: '', width: 80, renderCell: (cellValues) => {
         return (<Button variant="contained"
@@ -71,6 +73,7 @@ export default function Product() {
 
       <Grid container item md={8} sm={8} xs={8} style={{ marginTop: '5vh', marginBottom: '5vh' }} justifyContent="space-between">
         <b>Product List</b>
+        <TextField label="search"></TextField>
         <Grid item>
           <Button variant="contained" href={`${window.location.origin}/add`}>Add Product</Button>
           <Button variant="outlined" color="secondary" href={`${window.location.origin}/add`}
@@ -79,7 +82,7 @@ export default function Product() {
             }}>logout</Button>
         </Grid>
       </Grid>
-      <Grid item md={8} sm={12} xs={12} style={{ height: "80vh" }}>
+      <Grid item md={11} sm={12} xs={12} style={{ height: "80vh" }}>
         {
           (state.products) ? <React.Fragment><DataGrid
             rows={state.products}
@@ -88,6 +91,7 @@ export default function Product() {
             rowsPerPageOptions={[10]}
             checkboxSelection={false}
             getRowId={(row) => row.sku}
+            rowHeight={150}
 
           />
 

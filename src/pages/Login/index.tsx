@@ -56,7 +56,11 @@ async function login():Promise<any>{
                                         return;
                                     }
 
-                                    const { data }: any = await login().catch(({ response }) => alert(response.data.message));
+                                    const { data }: any = await login().catch(({ response }) =>{
+                                        console.log("error login");
+                                        console.log(response);
+                                        alert(response.data.message);
+                                    });
                                     if (data.success) {
                                         localStorage.setItem('accessToken', data.accessToken);
                                         alert("login success!")
