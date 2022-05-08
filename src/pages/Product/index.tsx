@@ -87,7 +87,7 @@ export default function Product() {
           (state.products) ? <React.Fragment><DataGrid
             rows={state.products}
             columns={columns}
-            pageSize={10}
+            pageSize={4}
             rowsPerPageOptions={[10]}
             checkboxSelection={false}
             getRowId={(row) => row.sku}
